@@ -1,3 +1,8 @@
+# mergging two sorted lists into one sorted list using two pointer technique
+# time complexity: O(n+m) where n and m are the lengths of the two lists
+# space complexity: O(n+m) for the result list
+
+
 l1=[1,3,5,7,9]
 l2=[10,8,6,4,2]
 
