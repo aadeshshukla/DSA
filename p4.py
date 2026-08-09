@@ -62,6 +62,19 @@ def reverse_list(lst):
 x=[1,2,3,4,5]
 print(reverse_list(x))
 # time complexity O(n)
+# find unique elements in a sorted array 
+nums=[1,1,2,2,3,3,3,4,5,5]
+def remove_duplicates(nums):
+    i=1
+    k=0
+    for i in range(len(nums)):
+        if nums[k]!=nums[i]:
+            k+=1
+            nums[k]=nums[i]
+            
+    return k+1
+
+print(remove_duplicates(nums))
 # space complexity O(1)
 
 
