@@ -17,3 +17,5 @@ a=[1, 3, 5, 0, 0, 0]
 b=[2, 4, 6]
 merge_two_sorted_arrays(a, 3, b, 3)
 print(a)
+
+# exams sar par hai 
