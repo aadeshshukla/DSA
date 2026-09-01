@@ -61,3 +61,32 @@ def move_zeros(nums):
 
 print(move_zeros([0, 1, 0, 3, 12]))  # Output: [1, 3, 12, 0, 0]
 
+def merge_intervals(intervals):
+    if not intervals:
+        return []
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+    for current in intervals[1:]:
+        last_merged = merged[-1]
+        if current[0] <= last_merged[1]:
+            last_merged[1] = max(last_merged[1], current[1])
+        else:
+            merged.append(current)
+    return merged   
+
+# test the function
+print(merge_intervals([[1,3],[2,6],[8,10],[15,18]]))  # Output: [[1,6],[8,10],[15,18]]
+
+def longest_substring_without_repeating_characters(s):
+    char_index_map = {}
+    left = 0
+    max_length = 0
+    for right in range(len(s)):
+        if s[right] in char_index_map and char_index_map[s[right]] >= left:
+            left = char_index_map[s[right]] + 1
+        char_index_map[s[right]] = right
+        max_length = max(max_length, right - left + 1)
+    return max_length
+
+# test the function
+print(longest_substring_without_repeating_characters("abcabcbb"))  # Output: 3
