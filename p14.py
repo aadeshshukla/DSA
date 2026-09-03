@@ -104,3 +104,20 @@ def remove_duplicates_from_array(nums):
 
 # test the function
 print(remove_duplicates_from_array([1, 1, 2]))  # Output: 2
+
+def longest_palindromic_substring(s):
+    if len(s) == 0:
+        return ""
+    start, end = 0, 0
+    for i in range(len(s)):
+        len1 = expand_around_center(s, i, i)
+        len2 = expand_around_center(s, i, i + 1)
+        max_len = max(len1, len2)
+        if max_len > end - start:
+            start = i - (max_len - 1) // 2
+            end = i + max_len // 2
+    return s[start:end + 1]
+
+    # test the function
+print(longest_palindromic_substring("babad"))  # Output: "bab" or "aba"
+    
