@@ -121,3 +121,14 @@ def longest_palindromic_substring(s):
     # test the function
 print(longest_palindromic_substring("babad"))  # Output: "bab" or "aba"
     
+
+
+def remove_duplicates(nums):
+    i=0
+    if not nums:
+        return 0
+    for j in range(1,len(nums)):
+        if nums[i]!=nums[j]:
+            i+=1
+            nums[i]=nums[j]
+    return i+1
