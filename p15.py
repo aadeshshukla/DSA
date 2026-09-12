@@ -74,3 +74,27 @@ print(remove_duplicates([1, 1, 2]))  # Output: 2,
 print(remove_duplicates([0,0,1,1,1,2,2,3,3,4]))  # Output: 5
 
 
+# Move Zeroes: Shift all zeroes to the end while maintaining the relative order of non-zero elements.
+
+def move_zeroes(nums):
+    last_non_zero_found_at = 0
+    for current in range(len(nums)):
+        if nums[current] != 0:
+            nums[last_non_zero_found_at], nums[current] = nums[current], nums[last_non_zero_found_at]
+            last_non_zero_found_at += 1
+
+# Explanation:
+# This function moves all zeroes in the array to the end while maintaining the order of non-zero elements.
+# It uses a pointer to track the position of the last non-zero element found.
+# When a non-zero element is found, it is swapped with the element at the last non-zero position, and the pointer is incremented.
+# The function modifies the array in-place and does not return anything.
+
+# test cases
+nums1 = [0, 1, 0, 3, 12] 
+move_zeroes(nums1)
+print(nums1)  # Output: [1, 3, 12, 0, 0]
+
+nums2 = [0, 0, 1]
+move_zeroes(nums2)
+print(nums2)  # Output: [1, 0, 0]
+
