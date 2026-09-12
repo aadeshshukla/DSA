@@ -50,3 +50,27 @@ print(two_sum_unsorted([2, 7, 11, 15], 9))
 print(two_sum_unsorted([3, 2, 4], 6))
 print(two_sum_unsorted([3, 3], 6))
 
+# Remove Duplicates from Sorted Array: Modify the array in-place so unique elements appear first; return the count.
+
+def remove_duplicates(nums):
+    if not nums:
+        return 0
+    write_index = 1
+    for read_index in range(1, len(nums)):
+        if nums[read_index] != nums[read_index - 1]:
+            nums[write_index] = nums[read_index]
+            write_index += 1
+    return write_index
+
+# Explanation:
+# This function removes duplicates from a sorted array in-place. 
+# It uses two pointers: one for reading through the array and another for writing the unique elements.
+# The write pointer is used to place the unique elements at the beginning of the array.
+# The function returns the count of unique elements, and the first part of the array will contain these unique elements.
+
+
+# test cases
+print(remove_duplicates([1, 1, 2]))  # Output: 2,
+print(remove_duplicates([0,0,1,1,1,2,2,3,3,4]))  # Output: 5
+
+
