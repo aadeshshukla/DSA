@@ -98,3 +98,4 @@ nums2 = [0, 0, 1]
 move_zeroes(nums2)
 print(nums2)  # Output: [1, 0, 0]
 
+# so fup
